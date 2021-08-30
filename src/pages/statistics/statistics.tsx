@@ -11,6 +11,7 @@ import * as CountryActions from "../../redux/country/countryActions";
 interface Props extends RouteComponentProps<any> {
   countryActions: typeof CountryActions;
   statistics: CountryType[];
+  token: string | null;
 }
 const columns: GridColDef[] = [
   {
@@ -51,24 +52,30 @@ const columns: GridColDef[] = [
 function Statistics(props: Props) {
   React.useEffect(()=>{
     props.countryActions.getStatistics();
-  },[]);
-
+  },[props.token]);
+  const getTable=()=>{
+    if(props.statistics){
+      return(
+      <DataGrid
+        rows={props.statistics.map((country)=>{
+          return country.statistics
+        })}
+        columns={columns}/>
+      )
+    }
+  }
   return (
     <div style={{width:"1200px", margin: "auto", marginTop: "30px"}} >
     <div className="dataTable">
-    <DataGrid
-      rows={props.statistics.map((country)=>{
-        return country.statistics
-      })}
-      columns={columns}
-  />
-  </div>
-  </div>
+       {getTable()}
+    </div>
+    </div>
   );
 }
 
 const mapStateToProps = (state: RootState) => ({
   statistics: state.countryReducer.statistics,
+  token: state.loginForm.token
 });
 
 function mapDispatchToProps(dispatch: any) {

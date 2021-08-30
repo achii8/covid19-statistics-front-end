@@ -15,7 +15,7 @@ export interface ResponseGenerator{
 function* getCountrySaga() {
   try {
     const response: ResponseGenerator = yield call(
-      createApiCall, { method: MethodType.GET, url: countriesRoute}
+      createApiCall, { method: MethodType.GET, url: countriesRoute, data: {}, auth: true}
     );
     if (response) {
       yield put({ type: ActionType.GET_COUNTRIES_SUCCESS, payload: response});

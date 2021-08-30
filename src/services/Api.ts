@@ -18,7 +18,7 @@ export const createApiCall = async ({ method = 'GET', url = '', data = {}, auth 
         "Content-Type": "application/json",
     }
     if (auth){
-        headers["Authorization"] = getCookie('token');
+        headers["Authorization"] = `Bearer ${getCookie('token')}`;
     }
   return fetch(`${apiBaseRoute}${url}`, {
     body: method === 'GET' ? undefined : JSON.stringify(data),

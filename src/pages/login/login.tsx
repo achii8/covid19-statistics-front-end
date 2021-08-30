@@ -8,6 +8,7 @@ import * as LoginActions from "../../redux/authentication/authenticationActions"
 import { TextField } from "@material-ui/core";
 import "./login.scss";
 import { useTranslation } from 'react-i18next'
+import { checkCookie } from "../../utils/cookies";
 
 
 interface Props extends RouteComponentProps<any> {
@@ -27,7 +28,7 @@ function Login(props: Props) {
     });
   };
   useEffect(() => {
-    if(props.token) {
+    if(checkCookie()) {
       props.history.push('/statistics');
     }
   },[props.token]);
