@@ -1,0 +1,23 @@
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    .area{
+        box-shadow: -3px 10px 52px 0px rgba(68,166,143,0.75);
+        border-radius: 30px;
+        padding: 30px;
+        .eachCol{
+            display: flex;
+            width: 340px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            .fieldStyles{
+                width: 100%;
+            }
+        }
+    }
+}

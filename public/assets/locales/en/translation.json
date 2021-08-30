@@ -1,0 +1,18 @@
+{
+    "mainPage": "Main Page",
+    "statistics": "Statistics",
+    "about": "About",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "code": "Code",
+    "country": "Country",
+    "critical": "Critical",
+    "deaths": "Deaths",
+    "recovered": "Recovered",
+    "lastUpdate": "Last Update",
+    "firstName": "First Name",
+    "lastName": "Last Name"
+}

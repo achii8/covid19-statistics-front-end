@@ -1,0 +1,27 @@
+.header{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(191, 226, 241);
+    flex:1;
+    padding-left: 30px;
+    padding-right: 30px;
+    .menu-item{
+        width: auto;
+        height: 100%;
+        display: flex;
+        max-width: 400px;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        vertical-align: center;
+        cursor: pointer;
+        font-size: 20px;
+        &:hover{
+            color: #caa
+        }
+    }
+}
